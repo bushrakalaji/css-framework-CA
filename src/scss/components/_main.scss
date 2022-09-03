@@ -1,0 +1,36 @@
+body{
+    color: $success;
+}
+
+.bi-camera,
+.bi-camera-reels {
+  width: 30px;
+  height: 30px;
+  color: $secondary;
+}
+.bi-camera-reels {
+  width: 28px;
+}
+
+h2 {
+  color: $dark;
+}
+.txt-width {
+  max-width: 600px;
+}
+
+.font-cocktail,
+h2 {
+  font-family: "cocktail-shaker";
+}
+.cover-img{
+    max-width: 1050px;
+}
+.img-size{
+    max-height: 300px;
+    overflow: hidden;
+}
+.p_img-size{
+    width: 200px;
+ 
+}

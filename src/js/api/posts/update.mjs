@@ -4,6 +4,11 @@ import { authFetch } from "../authFetch.mjs";
 
 const action = `/posts`;
 const method = `put`;
+/**
+ * this function let us update post by id
+ * @param {string} postData 
+ * @returns 
+ */
 export async function updatePost(postData) {
     if (!postData.id) {
         throw new Error("Update requires a postID")
@@ -13,6 +18,7 @@ export async function updatePost(postData) {
     method,
     body: JSON.stringify(postData),
   });
-
+  alert ("Your post has updated")
+  window.location.replace("/posts/index.html")
   return await response.json();
 }

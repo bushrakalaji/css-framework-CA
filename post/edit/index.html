@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
     <script
       src="https://kit.fontawesome.com/ffa88f23df.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://use.typekit.net/exj4dkv.css" />
   </head>
-  <body class="p-0 bg-secondary">
+  <body class="p-0 rounded bg-secondary">
     <header class="sticky-top shadow-sm">
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
@@ -29,7 +29,7 @@
           </button>
           <a
             class="navbar-brand font-cocktail text-success fs-2"
-            href="index.html"
+            href="../../posts/index.html"
           >
             MommyTalk<svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,11 +51,15 @@
             <div class="row font-cocktail fs-4">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.html"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="../../posts/index.html"
                     >Home</a
                   >
+                </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/profile/login/index.html">Login</a>
+                  <a class="nav-link" href="../../profile/login/index.html">Login</a>
                 </li>
               </ul>
             </div>
@@ -63,57 +67,75 @@
         </div>
       </nav>
     </header>
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-      <div class="row align-items-center g-lg-5 py-5">
-        <div class="col-lg-7 text-center text-lg-start">
-          <h1 class="display-4 fw-bold lh-1 mb-3 text-primary">
-            Share your thoughts and activities with us here in the moms
-            community
-          </h1>
-        </div>
-        <div class="col-md-10 mx-auto col-lg-5">
-          <form
-            action="https://nf-api.onrender.com/api/v1/social/posts"
-            class="p-4 p-md-5 border rounded-3 bg-light"
-            id="loginForm"
-          >
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                pattern="^[\w\-.]+@(stud.)?noroff.no$"
-                required
-                title="only @(stud.)noroff.no domains are allowd to login."
-              />
-              <label for="floatingInput">Email address</label>
-            </div>
+    <main class="pb-3">
+      <section class="container txt-width shadow-sm p-3 mt-4 rounded bg-light">
+        <h2 class="">New post</h2>
 
-            <div class="form-floating mb-3">
-              <input
-                type="password"
-                name="password"
-                class="form-control"
-                required
-                minlength="8"
-              />
-              <label for="floatingInput">Password</label>
-            </div>
-            <div class="checkbox mb-3">
-              <label>
-                <input type="checkbox" value="remember-me" /> Remember me
-              </label>
-              <a class="nav-link active" href="/profile/register/">Register here</a>
-            </div>
-            <button class="w-100 btn btn-lg btn-outline-success" type="submit">
-              Login
-            </button>
-          </form>
+     
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+   
+    <div class=" mx-auto">
+      <form
+        class="p-4 p-md-5 border rounded-3 bg-light"
+        id="editPost"
+      >
+        <div class="form-floating mb-3"> 
+          
+          <input
+            type="text"
+            name="title"
+            class="form-control"
+            required
+          />
+           <label for="floatingInput">Title</label>
         </div>
-      </div>
+        <div class="form-floating mb-3"> 
+           
+          <textarea name="body" id="" cols="30" rows="10" class="form-control" required></textarea>
+          <label for="floatingInput">Body</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="hidden"
+            name="id"
+            class="form-control"
+          />
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            name="tags"
+            class="form-control"
+          />
+          <label for="floatingInput">Tags</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input
+            type="url"
+            name="password"
+            class="form-control"
+          />
+          <label for="floatingInput">Media</label>
+        </div>
+    <button type="submit" class="btn btn-outline-success float-end">
+            Update Post
+          </button>
+     
+      </form>
     </div>
+        
+        
+          
+      </section>
+    </main>
 
+    <footer class="bg-info text-center p-3">
+      © MommyGirls @ 2022 By : Bushra Kalaji
+    </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/src/js/index.mjs" type="module"></script>
+    <script src="../../src/js/index.mjs" type="module"></script>
   </body>
 </html>

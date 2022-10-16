@@ -1,5 +1,7 @@
 import { login } from "../api/auth/login.mjs";
-
+/**
+ * this function handler our login function 
+ */
 export function setLoginFormListner() {
   const form = document.querySelector("#loginForm");
 if (form) {
@@ -8,10 +10,11 @@ if (form) {
     const form = event.target;
     const formData = new FormData(form);
     const profile = Object.fromEntries(formData.entries());
-    console.log(profile)
+
 // login API
-    login(profile)
+    login(profile) 
   });
-}
 
 }
+}
+

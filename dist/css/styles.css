@@ -10790,7 +10790,7 @@ body {
   width: 28px;
 }
 
-h2, .h2 {
+h2, .h2, h1, .h1 {
   color: #0a3c16;
 }
 
@@ -10800,7 +10800,9 @@ h2, .h2 {
 
 .font-cocktail,
 h2,
-.h2 {
+.h2,
+h1,
+.h1 {
   font-family: "cocktail-shaker";
 }
 

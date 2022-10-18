@@ -17,7 +17,7 @@ export async function createPost(postData) {
   });
 const result = await response.json()
 alert ("Your post has created")
-window.location.replace("/posts/index.html")
+window.location.replace("/posts/myPosts.html")
   return result ;
   
 }

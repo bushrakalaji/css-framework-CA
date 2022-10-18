@@ -13,16 +13,14 @@ export async function searchFunction() {
 
   function handelNameControlInput(event) {
     const inputValue = event.currentTarget.value.toLowerCase();
-    const filteredResult = posts.filter(({title}) => {
+    const filteredResult = posts.filter(({ title }) => {
       return title.toLowerCase().includes(inputValue);
-    }); 
-    
-container.innerHTML ="";
+    });
 
-filteredResult.forEach(function(filteredPosts)
-{
+    container.innerHTML = "";
 
-    container.innerHTML += `
+    filteredResult.forEach(function (filteredPosts) {
+      container.innerHTML += `
     <div class="post">
     <h3>${filteredPosts.title}</h3>
     <img
@@ -35,10 +33,7 @@ filteredResult.forEach(function(filteredPosts)
     
     </div>
     
-    `
-
-})
+    `;
+    });
   }
-
-
 }

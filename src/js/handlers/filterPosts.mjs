@@ -2,10 +2,12 @@ import * as postsMethods from "../api/posts/index.mjs";
 
 export async function postsFilter() {
   const accessToken = localStorage.getItem("profile");
+
   const myAuther = JSON.parse(accessToken);
   const accurateAuther = myAuther.name;
   
   const myContainer = document.querySelector("#herePost");
+  
   console.log(accurateAuther);
 
   const mYposts = await postsMethods.getPosts();
@@ -15,8 +17,11 @@ export async function postsFilter() {
       return true;
     }
   });
-  console.log(newPosts)
-  
+
+
+
+
+
 newPosts.forEach(function(mySingelPost){
 
     myContainer.innerHTML += `
@@ -29,7 +34,7 @@ newPosts.forEach(function(mySingelPost){
     alt="post image"
   />
     <p>${mySingelPost.body}</p>
-    <a href="/post/index.html?id=${mySingelPost.id}"> veiw post </a>
+    <a href="/post/index.html?id=${mySingelPost.id}" class="btn btn-outline-secondary"> veiw post </a>
     
     </div>
     

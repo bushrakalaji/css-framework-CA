@@ -11,7 +11,7 @@ body {
   width: 28px;
 }
 
-h2 {
+h2 , h1 {
   color: $dark;
 }
 .txt-width {
@@ -19,7 +19,8 @@ h2 {
 }
 
 .font-cocktail,
-h2 {
+h2,
+h1 {
   font-family: "cocktail-shaker";
 }
 .cover-img {

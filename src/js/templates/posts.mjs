@@ -1,18 +1,18 @@
 import * as postsMethods from "../api/posts/index.mjs";
 import { searchFunction } from "../handlers/search.mjs";
-
-
+import { displayError } from "../handlers/error.mjs";
+import { oldPost } from "../handlers/filterOld.mjs";
 /**
  * this function Allows us to view posts from the api on html
  */
 export async function postsTamplate() {
-  const posts = await postsMethods.getPosts();
   const container = document.querySelector("#posts");
+  try {
+    const posts = await postsMethods.getPosts();
+    container.innerHTML = "";
 
-  container.innerHTML ="";
-
-  posts.forEach(function (post) {
-    container.innerHTML += `
+    posts.forEach(function (post) {
+      container.innerHTML += `
   <div class="post mb-5 border">
   <h3>${post.author.name}</h3>
   <h4>${post.title}</h4>
@@ -22,14 +22,17 @@ export async function postsTamplate() {
   alt="post image"
 />
   <p>${post.body}</p>
-  <a href="/post/index.html?id=${post.id}"> veiw post </a>
+  <a href="/post/index.html?id=${post.id}" class="btn btn-outline-secondary"> veiw post </a>
   
   </div>
 `;
-  });
+    });
 
-  searchFunction()
-
+    oldPost();
+    searchFunction();
+  } catch (error) {
+    container.innerHTML += displayError(
+      "An error occurred when calling the API"
+    );
+  }
 }
-
-

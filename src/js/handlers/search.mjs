@@ -1,26 +1,28 @@
 import * as postsMethods from "../api/posts/index.mjs";
-let posts = [];
+import { displayError } from "./error.mjs";
 /**
  * this function allows us to search by title
  */
-export async function searchFunction() {
-  const container = document.querySelector("#posts");
-  const posts = await postsMethods.getPosts();
+export async function searchFunction() {    
+    const container = document.querySelector("#posts");
+  try {
 
-  const searchBar = document.querySelector(".search-bar");
+    const posts = await postsMethods.getPosts();
 
-  searchBar.addEventListener("keyup", handelNameControlInput);
+    const searchBar = document.querySelector(".search-bar");
 
-  function handelNameControlInput(event) {
-    const inputValue = event.currentTarget.value.toLowerCase();
-    const filteredResult = posts.filter(({ title }) => {
-      return title.toLowerCase().includes(inputValue);
-    });
+    searchBar.addEventListener("keyup", handelNameControlInput);
 
-    container.innerHTML = "";
+    function handelNameControlInput(event) {
+      const inputValue = event.currentTarget.value.toLowerCase();
+      const filteredResult = posts.filter(({ title }) => {
+        return title.toLowerCase().includes(inputValue);
+      });
 
-    filteredResult.forEach(function (filteredPosts) {
-      container.innerHTML += `
+      container.innerHTML = "";
+
+      filteredResult.forEach(function (filteredPosts) {
+        container.innerHTML += `
     <div class="post">
     <h3>${filteredPosts.title}</h3>
     <img
@@ -34,6 +36,11 @@ export async function searchFunction() {
     </div>
     
     `;
-    });
+      });
+    }
+  } catch (error) {
+    container.innerHTML += displayError(
+      "An error occurred when calling the API"
+    );
   }
 }

@@ -1,5 +1,5 @@
 import { API_SOCIAL_URL } from "../constants.mjs";
-
+import { displayError } from "../../handlers/error.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 const action = `/posts`;
@@ -11,6 +11,7 @@ const method = `delete`;
  * @returns 
  */
 export async function removePost(id) {
+  try {
     if (!id) {
         throw new Error("Delete requires a postID")
     }
@@ -22,4 +23,11 @@ export async function removePost(id) {
   window.location.replace("/posts/index.html")
   
   return await response.json();
+} catch (error) {
+  container.innerHTML += displayError(
+    "An error occurred when calling the API"
+  );
+}
+
+
 }

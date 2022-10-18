@@ -1,30 +1,30 @@
 import * as postsMethods from "../api/posts/index.mjs";
-
+import { displayError } from "./error.mjs";
+/**
+ * This function filters posts to get posts of the logged-in person
+ */
 export async function postsFilter() {
-  const accessToken = localStorage.getItem("profile");
+    const myContainer = document.querySelector("#herePost");
+  try {
+    const accessToken = localStorage.getItem("profile");
 
-  const myAuther = JSON.parse(accessToken);
-  const accurateAuther = myAuther.name;
-  
-  const myContainer = document.querySelector("#herePost");
-  
-  console.log(accurateAuther);
+    const myAuther = JSON.parse(accessToken);
+    const accurateAuther = myAuther.name;
 
-  const mYposts = await postsMethods.getPosts();
-  console.log(mYposts);
-  const newPosts = mYposts.filter(function ({author}) {
-    if (author.name === accurateAuther) {
-      return true;
-    }
-  });
+    
 
+    console.log(accurateAuther);
 
+    const mYposts = await postsMethods.getPosts();
+    console.log(mYposts);
+    const newPosts = mYposts.filter(function ({ author }) {
+      if (author.name === accurateAuther) {
+        return true;
+      }
+    });
 
-
-
-newPosts.forEach(function(mySingelPost){
-
-    myContainer.innerHTML += `
+    newPosts.forEach(function (mySingelPost) {
+      myContainer.innerHTML += `
     
     <div class="post">
     <h3>${mySingelPost.title}</h3>
@@ -38,11 +38,11 @@ newPosts.forEach(function(mySingelPost){
     
     </div>
     
-    `
-
-
-
-})
-
-  ;
+    `;
+    });
+  } catch (error) {
+    myContainer.innerHTML += displayError(
+      "An error occurred when calling the API"
+    );
+  }
 }

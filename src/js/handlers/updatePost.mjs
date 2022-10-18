@@ -1,8 +1,10 @@
 import { getPost, updatePost} from "../api/posts/index.mjs"
+import { displayError } from "./error.mjs";
 /**
  * this function handler our update function 
  */
 export async function setUpdatePostFormListner() {
+  try{
   const form = document.querySelector("#editPost");
 
   const url = new URL(location.href);
@@ -23,6 +25,10 @@ if (form) {
 // login API
     updatePost(post)
   });
-}
+}} catch (error) {
+  container.innerHTML += displayError(
+    "An error occurred when calling the API"
+  );
+} 
 
 }

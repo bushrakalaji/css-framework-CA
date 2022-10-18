@@ -11,7 +11,6 @@ export async function singleresult() {
     const accessToken = localStorage.getItem("profile");
     const myAuther = JSON.parse(accessToken);
     const accurateAuther = myAuther.name;
-    console.log(accurateAuther);
 
     const queryString = document.location.search;
     const params = new URLSearchParams(queryString);

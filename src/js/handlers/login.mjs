@@ -5,7 +5,7 @@ import { displayError } from "./error.mjs";
  */
 export function setLoginFormListner() {
   const form = document.querySelector("#loginForm");
-  try {
+  
     if (form) {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -17,9 +17,4 @@ export function setLoginFormListner() {
         login(profile);
       });
     }
-  } catch (error) {
-    form.innerHTML += displayError(
-      "An error occurred when calling the API"
-    );
-  }
 }

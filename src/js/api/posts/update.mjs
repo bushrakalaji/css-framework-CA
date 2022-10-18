@@ -2,8 +2,8 @@ import { API_SOCIAL_URL } from "../constants.mjs";
 import { displayError } from "../../handlers/error.mjs";
 import { authFetch } from "../authFetch.mjs";
 
-const action = `/posts`;
-const method = `put`;
+const action = "/posts";
+const method = "put";
 /**
  * this function let us update post by id
  * @param {string} postData

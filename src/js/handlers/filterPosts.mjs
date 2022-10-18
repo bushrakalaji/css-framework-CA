@@ -1,5 +1,4 @@
 import * as postsMethods from "../api/posts/index.mjs";
-import { displayError } from "./error.mjs";
 /**
  * This function filters posts to get posts of the logged-in person
  */

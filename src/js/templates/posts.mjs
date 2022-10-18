@@ -1,6 +1,7 @@
 import * as postsMethods from "../api/posts/index.mjs";
 import { searchFunction } from "../handlers/search.mjs";
 
+
 /**
  * this function Allows us to view posts from the api on html
  */
@@ -26,7 +27,9 @@ export async function postsTamplate() {
   </div>
 `;
   });
+
   searchFunction()
+
 }
 
 

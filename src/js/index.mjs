@@ -2,6 +2,8 @@ import * as listeners from "./handlers/index.mjs"
 import * as postsMethods from "./api/posts/index.mjs"
 import { postsTamplate } from "./templates/posts.mjs";
 import {singleresult } from "./templates/post.mjs"
+import { postsFilter } from "./handlers/filterPosts.mjs";
+
 const path = location.pathname;
 
 if (path === '/profile/login/index.html') {
@@ -16,6 +18,8 @@ if (path === '/profile/login/index.html') {
   postsTamplate()
 } else if (path === '/post/index.html'){
   singleresult ()
-}
+} else if (path === '/posts/myPosts.html'){
+  postsFilter()
+} 
 
 

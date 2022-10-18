@@ -13,8 +13,8 @@ export async function searchFunction() {
 
   function handelNameControlInput(event) {
     const inputValue = event.currentTarget.value.toLowerCase();
-    const filteredResult = posts.filter((post) => {
-      return post.title.toLowerCase().includes(inputValue);
+    const filteredResult = posts.filter(({title}) => {
+      return title.toLowerCase().includes(inputValue);
     }); 
     
 container.innerHTML ="";

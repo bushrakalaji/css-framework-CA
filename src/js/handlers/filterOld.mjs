@@ -2,9 +2,9 @@ import * as postsMethods from "../api/posts/index.mjs";
 import { displayError } from "./error.mjs";
 export async function oldPost() {  
      const oldContainer = document.querySelector("#posts");
-  try {
-    const allPosts = await postsMethods.getPosts();
  
+    const allPosts = await postsMethods.getPosts();
+
 
     const oldPosts = allPosts.sort((a, b) => {
       return a.id - b.id;
@@ -32,9 +32,4 @@ export async function oldPost() {
     document.querySelector("#old").addEventListener("click", () => {
       filterOldPosts();
     });
-  } catch (error) {
-    oldContainer.innerHTML += displayError(
-      "An error occurred when calling the API"
-    );
-  }
-}
+  } 

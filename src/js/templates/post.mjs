@@ -43,7 +43,7 @@ export async function singleresult() {
     /**
      * This function works when this condition (singleR.author.name === accurateAuther) is not fulfilled.
      */
- 
+
     function othersPosts() {
       singleResult.innerHTML += `<div>
       <h3>${singleR.author.name}</h3>

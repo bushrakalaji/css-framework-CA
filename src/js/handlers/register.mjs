@@ -4,9 +4,9 @@ import { displayError } from "./error.mjs";
  * this function handler our register function
  */
 export function setRegisterFormListner() { 
-  const form = document.querySelector("#registerForm");
-  try {
-   
+ 
+  try { 
+    const form = document.querySelector("#registerForm");
     if (form) {
       form.addEventListener("submit", (event) => {
         event.preventDefault();

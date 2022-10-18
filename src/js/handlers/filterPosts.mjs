@@ -4,19 +4,14 @@ import { displayError } from "./error.mjs";
  * This function filters posts to get posts of the logged-in person
  */
 export async function postsFilter() {
-    const myContainer = document.querySelector("#herePost");
-  try {
+  const myContainer = document.querySelector("#herePost");
+ 
     const accessToken = localStorage.getItem("profile");
 
     const myAuther = JSON.parse(accessToken);
     const accurateAuther = myAuther.name;
 
-    
-
-    console.log(accurateAuther);
-
     const mYposts = await postsMethods.getPosts();
-    console.log(mYposts);
     const newPosts = mYposts.filter(function ({ author }) {
       if (author.name === accurateAuther) {
         return true;
@@ -40,9 +35,5 @@ export async function postsFilter() {
     
     `;
     });
-  } catch (error) {
-    myContainer.innerHTML += displayError(
-      "An error occurred when calling the API"
-    );
-  }
+ 
 }

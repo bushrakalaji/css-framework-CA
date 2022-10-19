@@ -4,35 +4,40 @@ import * as postsMethods from "../api/posts/index.mjs";
  */
 export async function postsFilter() {
   const myContainer = document.querySelector("#herePost");
- 
-    const accessToken = localStorage.getItem("profile");
 
-    const myAuther = JSON.parse(accessToken);
-    const accurateAuther = myAuther.name;
+  const accessToken = localStorage.getItem("profile");
 
-    const mYposts = await postsMethods.getPosts();
-    const newPosts = mYposts.filter(function ({ author }) {
-      if (author.name === accurateAuther) {
-        return true;
-      }
-    });
+  const myAuthor = JSON.parse(accessToken);
+  const accurateAuthor = myAuthor.name;
 
-    newPosts.forEach(function (mySingelPost) {
-      myContainer.innerHTML += `
-    
-    <div class="post">
-    <h3>${mySingelPost.title}</h3>
-    <img
-    src="${mySingelPost.media}"
-    class="card-img-top"
-    alt="post image"
-  />
-    <p>${mySingelPost.body}</p>
-    <a href="/post/index.html?id=${mySingelPost.id}" class="btn btn-outline-secondary"> veiw post </a>
-    
-    </div>
+  const mYposts = await postsMethods.getPosts();
+  const newPosts = mYposts.filter(function ({ author }) {
+    if (author.name === accurateAuthor) {
+      return true;
+    }
+  });
+
+  newPosts.forEach(function (currentAuthorPosts) {
+    let image = `<img
+      src="https://files.fm/thumb_show.php?i=ju48sg94r"
+      class="card-img-top"
+      alt="post image"
+      />`;
+    if (currentAuthorPosts.media) {
+      image = `<img
+        src="${currentAuthorPosts.media}"
+        class="card-img-top"
+        alt="post image"
+        />`;
+    }
+    myContainer.innerHTML += `
+      <div class="post">
+        <h3>${currentAuthorPosts.title}</h3>
+        ${image}
+        <p>${currentAuthorPosts.body}</p>
+        <a href="/post/index.html?id=${currentAuthorPosts.id}" class="btn btn-outline-secondary"> View post </a>
+      </div>
     
     `;
-    });
- 
+  });
 }

@@ -1,7 +1,7 @@
 /**
  * this function display the error message
- * @param {string} message 
- * @returns 
+ * @param {string} message
+ * @returns
  */
 
 export function displayError(message = "Unknown error") {

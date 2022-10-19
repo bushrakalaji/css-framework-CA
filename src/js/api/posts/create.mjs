@@ -9,6 +9,7 @@ const action = "/posts";
  * @returns
  */
 export async function createPost(postData) {
+  postData.tags = postData.tags.split(" ");
   const createPostURL = API_SOCIAL_URL + action;
   const response = await authFetch(createPostURL, {
     method: "post",
@@ -16,6 +17,6 @@ export async function createPost(postData) {
   });
   const result = await response.json();
   alert("Your post has created");
-  window.location.replace("/posts/index.html");
+  window.location.replace("/posts/index.html" || "/post");
   return result;
 }

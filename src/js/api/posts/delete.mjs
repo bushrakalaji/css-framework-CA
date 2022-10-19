@@ -18,6 +18,6 @@ export async function removePost(id) {
     method,
   });
   alert("Your post has deleted");
-  window.location.replace("/posts/index.html");
+  window.location.replace("/posts/index.html" || "/posts");
   return await response.json();
 }

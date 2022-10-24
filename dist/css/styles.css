@@ -68,8 +68,8 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #fffdfa;
-  --bs-link-hover-color: #cccac8;
+  --bs-link-color: #262359;
+  --bs-link-hover-color: #1e1c47;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #ffffe9;
 }
@@ -10790,7 +10790,7 @@ body {
   width: 28px;
 }
 
-h2, .h2 {
+h2, .h2, h1, .h1 {
   color: #0a3c16;
 }
 
@@ -10800,7 +10800,9 @@ h2, .h2 {
 
 .font-cocktail,
 h2,
-.h2 {
+.h2,
+h1,
+.h1 {
   font-family: "cocktail-shaker";
 }
 

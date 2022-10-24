@@ -1,7 +1,6 @@
 body {
   color: $success;
 }
-
 .bi-camera,
 .bi-camera-reels {
   width: 30px;
@@ -12,7 +11,7 @@ body {
   width: 28px;
 }
 
-h2 {
+h2 , h1 {
   color: $dark;
 }
 .txt-width {
@@ -20,7 +19,8 @@ h2 {
 }
 
 .font-cocktail,
-h2 {
+h2,
+h1 {
   font-family: "cocktail-shaker";
 }
 .cover-img {
@@ -33,3 +33,5 @@ h2 {
 .p_img-size {
   width: 200px;
 }
+
+

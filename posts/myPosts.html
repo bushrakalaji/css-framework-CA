@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link rel="stylesheet" href="dist/css/styles.css" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
     <script
       src="https://kit.fontawesome.com/ffa88f23df.js"
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="https://use.typekit.net/exj4dkv.css" />
   </head>
-  <body class="p-0 bg-secondary ">
+  <body class="p-0 rounded bg-secondary">
     <header class="sticky-top shadow-sm">
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container">
@@ -29,7 +29,7 @@
           </button>
           <a
             class="navbar-brand font-cocktail text-success fs-2"
-            href="index.html"
+            href="./index.html"
           >
             MommyTalk<svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@
           >
             <form class="d-flex" role="search">
               <input
-                class="form-control me-2"
+                class="form-control me-2 search-bar"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
@@ -59,15 +59,15 @@
             <div class="row font-cocktail fs-4">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.html"
+                  <a
+                    class="nav-link active"
+                    aria-current="page"
+                    href="index.html"
                     >Home</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="profile.html">Profile</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="login.html">Login</a>
+                  <a class="nav-link" href="/profile/login/index.html">Login</a>
                 </li>
               </ul>
             </div>
@@ -75,52 +75,29 @@
         </div>
       </nav>
     </header>
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-      <div class="row align-items-center g-lg-5 py-5">
-        <div class="col-lg-7 text-center text-lg-start">
-          <h1 class="display-4 fw-bold lh-1 mb-3 text-primary">
-            Share your thoughts and activities with us here in the moms
-            community
-          </h1>
+    <main class="pb-3">
+      <section class="container txt-width shadow-sm p-3 mt-4 rounded bg-light">
+        <h2 class="">New post</h2>
+        <div id="createPosts"><a href="../post/create/index.html" class="btn btn-outline-secondary">Create post</a></div>
+        <a href="./index.html" class="btn btn-outline-secondary mt-3">Home Page</a>
+      </section>
+
+      <section class="container txt-width mt-3 shadow-sm p-3 rounded bg-light">
+        <h2>My Posts</h2>
+        <div id="herePost" class="pb-5">
+
+
+
         </div>
-        <div class="col-md-10 mx-auto col-lg-5">
-          <form
-            action="/profile.html"
-            class="p-4 p-md-5 border rounded-3 bg-light"
-          >
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="floatingInput validationServer01"
-                placeholder="name@example.com"
-                required
-              />
-              <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="password"
-                class="form-control"
-                id="floatingPassword"
-                placeholder="Password"
-                required
-              />
-              <label for="floatingPassword">Password</label>
-            </div>
-            <div class="checkbox mb-3">
-              <label>
-                <input type="checkbox" value="remember-me" /> Remember me
-              </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-outline-success" type="submit">
-              Login
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-   
+
+        
+      </section>
+    </main>
+
+    <footer class="bg-info text-center p-3">
+      © MommyGirls @ 2022 By : Bushra Kalaji
+    </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/js/index.mjs" type="module"></script>
   </body>
 </html>
